@@ -62,7 +62,7 @@ APKS=$(cat $PACKAGES_FILE | tr '\n' ' ') \
     "$(dirname "$0")"/scripts/mkimage.sh --tag ${TAG} \
     --outdir ${OUT_DIR} \
     --arch ${ARCH} \
-    $(cat $REPOSITORIES_FILE | sed -e 's/^/--repository /') \
+    $(awk 'NF>0{print $NF}' $REPOSITORIES_FILE | sed -e 's/^/--repository /') \
     --profile ${ARCH} \
     --name ${NAME} \
     --version ${VERSION} \
