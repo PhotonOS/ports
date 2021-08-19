@@ -58,7 +58,7 @@ abuild-keygen -i -a -q -n
 
 echo "----------- Make Image -----------"
 APKOVL=$APKOVL \
-APKS=$(cat $PACKAGES_FILE | tr '\n' ' ') \
+APKS=$(awk '{sub(/@.*/, ""); print}' $PACKAGES_FILE | tr '\n' ' ') \
     "$(dirname "$0")"/scripts/mkimage.sh --tag ${TAG} \
     --outdir ${OUT_DIR} \
     --arch ${ARCH} \
