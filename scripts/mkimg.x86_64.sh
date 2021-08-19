@@ -11,7 +11,7 @@ profile_x86_64() {
 	boot_addons="amd-ucode intel-ucode"
 	initrd_ucode="/boot/amd-ucode.img /boot/intel-ucode.img"
 	apks="$apks $APKS
-		ethtool hwids lftp links doas
+		ethtool hwids lftp links doas udev
 		logrotate lua5.3 lsof lm_sensors lxc lxc-templates nano
 		pax-utils paxmark pciutils screen strace sudo tmux
 		usbutils v86d vim xtables-addons curl
