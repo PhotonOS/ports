@@ -40,6 +40,7 @@ util-linux \
 e2fsprogs \
 gawk \
 tree \
+shadow \
 sudo
 
 echo "----- Installing EFI Tools ------"
